@@ -222,7 +222,21 @@
 					Padronização do acesso. => Basquiat
 				</section>
 				<section>
-					Lautrec e fazendo a ASP emitir eventos
+					<section>
+						<h3>RabbitMQ tem driver pra tudo que é linguagem</h3>
+						<h6>Bom, isso é mentira.</h6>
+					</section>
+					<section>
+						<h3>Não há drivers para ASP Clássico</h3>
+						<div class="fragment">
+							<img src="imgs/confused-cat.jpg" alt="Hein?">
+							<p>Danou-se!</p>
+						</div>
+					</section>
+					<section>
+						<h2>REST publisher</h2>
+						<aside class="notes">Explicar em linhas gerais o motivo de existência do Lautrec</aside>
+					</section>
 				</section>
 				<section>
 					<section>
@@ -244,11 +258,18 @@
 						</p>
 					</section>
 					<section>
-						<h3>Caches. Caches por todos os lados</h3>
-						<p>Como em alguns casos a persistência só vai acontecer num futuro indeterminado, temos de dar a ilusão que a ação aconteceu de imediato</p>
+						<h3>Cache. Cache por todos os lados</h3>
+						<p>
+							Como (na maioria dos) casos a persistência só vai acontecer no futuro, temos de dar a ilusão que a ação aconteceu de imediato.
+						</p>
+						<p class="fragment">
+							Ou no mínimo avisar quando a ação foi concluída
+						</p>
 					</section>
-					- Cache
-					- Efeito local, consistência eventual.
+				</section>
+				<section>
+					<h3>TL;DR</h3>
+					<p>A estrutura distruibuida e assincrona ainda apresenta alguns desafios, mas está sendo usada com grande sucesso na dura empreitada do <ins>"Big Rewrite"</ins></p>
 				</section>
 				<section>
 					<h1>Obrigado!</h1>
