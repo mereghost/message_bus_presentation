@@ -44,8 +44,9 @@
 					<h1>The Not Really Entreprise Message Bus</h1>
 					<small class="fragment">Ou microserviços, a parte assíncrona</small>
 				</section>
-				<section data-transition="fade" data-background="#f44">
-					<h1>Essa apresentação contém gatos</h1>
+				<section data-transition="fade">
+					<h1 style="color: red">Atenção:</h1>
+					<h3>Esta apresentação contém gatos</h3>
 					<p>Sorry dog people</p>
 				</section>
 				<section>
@@ -61,17 +62,16 @@
 						<h1>Geek assumido</h1>
 						<ul>
 							<li class="fragment">Leitor voraz</li>
-							<li class="fragment">Apaixonado por RPGs e jogos de tabuleiro</li>
-							<li class="fragment">Sendo honesto, sou fã de jogos</li>
+							<li class="fragment">Apaixonado por RPGs, jogos de tabuleiro, enfim fã de jogos</li>
+							<li class="fragment">Praticante de Refactor Terapêutico</li>
 							<li class="fragment">Devorador de novas tecnologias</li>
 						</ul>
 					</section>
 					<section>
-						<h1>Com Ruby desde 2005</h1>
+						<h1>Tabalhando com Ruby desde 2005</h1>
 						<h6>Não sinto saudade de você C#</h6>
 					</section>
 				</section>
-
 				<section>
 					<section>
 						<h2>Essa história aconteceu onde?</h2>
@@ -79,6 +79,7 @@
 					</section>
 					<section>
 						<img src="imgs/logo-vagas.png" alt="VAGAS" style="border: 0; box-shadow: 0 0 0 0 #fff">
+						<aside class="notes">Alguém aí conhecea VAGAS (sem ser o que o Ronie e o Dadario apresentaram nesses dias?</aside>
 					</section>
 					<section>
 						<h2>A VAGAS é uma empresa de Tecnologia</h2>
@@ -117,9 +118,15 @@
 									<li class="fragment">48 das classificadas no GPTW</li>
 								</ul>
 							</li>
-							<li class="fragment">Bazilhão de acessos mensais</li>
-							<li class="fragment">2 TB de dados e mais de 80k tabelas</li>
-							<li class="fragment">4 finais de tarde de jogos de tabuleiro no mês ^^</li>
+							<li class="fragment">
+								Trafego Insano!
+								<ul>
+									<li>96 milhões de pageviews no mês</li>
+									<li>350 mil visitantes únicos por dia</li>
+								</ul>
+							</li>
+							<li class="fragment">~2 TB de dados e mais de 80k tabelas</li>
+							<li class="fragment">4 finais de tarde de jogos de tabuleiro no mês ^_^</li>
 						</ol>
 					</section>
 					<section>
@@ -141,15 +148,17 @@
 						<aside class="notes">Momento da piada de perder os cabelos</aside>
 					</section>
 					<section>
-						<h3>Idéia!</h3>
-						<p>Vamos reprojetar a coisa toda usando Ruby</p>
+						<img src="imgs/sci_cat.jpg" alt="Ideia" style="float: left">
+						<h1>Idéia!</h1>
+						<h5>
+							Vamos reprojetar a coisa toda usando Ruby
+						</h5>
 						<small class="fragment">Afinal, o que pode dar errado?</small>
 					</section>
 					<section>
 						<h2>Primeira tentativa</h2>
-						<p>Monolitão em RoR</p>
-						<p class="fragment">O que rapidamente ficou impossível de trabalhar</p>
-						<small class="fragment">80k tabelas fica de dica das dificuldades</small>
+						<p>Projeto único em RoR, que rapidamente ficou impossível de trabalhar</p>
+						<small class="fragment">80k tabelas. #ficadica de algumas dificuldades</small>
 					</section>
 					<section>
 						<h2>Microserviços ao resgate</h2>
@@ -160,36 +169,93 @@
 				<section>
 					<section>
 						<h3>Arquitetura distribuida</h3>
-						<p>Achamos que seria mais simples substituir a lógica do ASP aos poucos.</p>
+						<p>Concluimos que seria mais simples substituir a lógica do ASP aos poucos.</p>
 					</section>
 					<section>
-						<h2>A pergunta é como?</h2>
-						<p>E afinal o quão pequeno deve ser um serviço?</p>
+						<h2>A(s) pergunta(s) era(m): Como?</h2>
+						<p class="fragment">E afinal o quão pequeno deve ser um serviço?</p>
+						<p class="fragment">E mais umas 200 perguntas que todos se fazem nessa hora</p>
 						<aside class="notes">Comentar do códdigo tem que ser "desse tamanho" do Chad Fowler</aside>
 					</section>
 					<section>
-						<h3>E principalmente como mantemos os sistemas funcionando lado a lado?</h3>
+						<h3>E principalmente: Como raios mantemos os sistemas funcionando lado a lado?</h3>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h2>VAGAS under the hood</h2>
-						<img src="imgs/pafuncia.jpg" alt="pafuncia">
+						<img src="imgs/pafuncia.jpg" alt="pafuncia" height="450px">
 					</section>
 					<section>
-						<h2>Vários serviços se comunicam de maneira desordenada</h2>
-						<p class="fragment">
+						<p>
 							<img src="imgs/homer.png" alt="YOLO" style="border: 0; box-shadow: 0 0 0 0">
 						</p>
-						<h4 class="fragment">E para não empilhar o tempo dos requests...</h4>
+						<h2 class="fragment">Ações causam efeitos colaterais por todo lado</h2>
+						<p class="fragment">Como vamos retratar isso?</p>
 					</section>
+				</section>
+				<section>
 					<section>
 						<h1>RabbitMQ</h1>
 						<p><a href="http://rabbitmq.com"><img src="imgs/rabbitmq.jpg" alt="RabbitMQ"></a></p>
 					</section>
+					<section>
+						<h2>Porque o RabbitMQ</h2>
+						<ol>
+							<li class="fragment">OSS de fácil instalação / manutenção</li>
+							<li class="fragment">Suporte a persistência em disco, confirms e ACKs</li>
+							<li class="fragment">Clustering e Federação entre Brokers</li>
+							<li class="fragment">Mesmo com máquinas modestas aguenta um fluxo de mensagems BEM grande</li>
+							<li class="fragment">Drivers maduros pra tudo quando é linguagem</li>
+						</ol>
+					</section>
+					<section>
+						<h3>O RabbitMQ tem lá seus problemas</h3>
+						<ol>
+							<li class="fragment">Possivel perda de mensagens numa partição de rede</li>
+							<li class="fragment">Impossível criar uma transação como definida no AMQP</li>
+							<li class="fragment">O cluster é extremamente sensível a picos de latência</li>
+						</ol>
+					</section>
 				</section>
 				<section>
-					<h1>Continua no proximo capítulo</h1>
+					Padronização do acesso. => Basquiat
+				</section>
+				<section>
+					Lautrec e fazendo a ASP emitir eventos
+				</section>
+				<section>
+					<section>
+						<h3>Assincronicidade == Compromissos</h3>
+					</section>
+					<section>
+						<h3>Idempotencia</h3>
+						<p>(praticamente) Todos nossos serviços tem der ser idempotentes.</p>
+						<aside class="notes">Entrega do RabbitMQ ser "At-least-once"</aside>
+					</section>
+					<section>
+						<h3>Fallbacks</h3>
+						<p>
+							No caso de falhas dos workers ou ausência do broker temos que ter como recuperar o trabalho.
+							<ul>
+								<li>Batches de republicação em caso de falha do broker</li>
+								<li>Processos em batch para os workers (caso possível)</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h3>Caches. Caches por todos os lados</h3>
+						<p>Como em alguns casos a persistência só vai acontecer num futuro indeterminado, temos de dar a ilusão que a ação aconteceu de imediato</p>
+					</section>
+					- Cache
+					- Efeito local, consistência eventual.
+				</section>
+				<section>
+					<h1>Obrigado!</h1>
+					<p>
+						Se tiver dúvidas, perguntas, vontade de trabalhar conosco ou só quiser trocar uma idéia:
+						<a href="mailto:marcello.rocha@vagas.com.br">marcello.rocha@vagas.com.br</a>
+					</p>
 				</section>
 			</div>
 		</div>
