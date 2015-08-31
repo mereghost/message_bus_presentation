@@ -1,313 +1,391 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>Not really Entreprise Message Bus</title>
+    <title>Not really Entreprise Message Bus</title>
 
-		<meta name="description" content="Not really Entreprise Message Bus">
-		<meta name="author" content="Marcello 'mereghost' Rocha">
+    <meta name="description" content="Not really Entreprise Message Bus">
+    <meta name="author" content="Marcello 'mereghost' Rocha">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/vagas.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/vagas.css" id="theme">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-	<body>
+  <body>
 
-		<div class="reveal">
+    <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>The Not Really Entreprise Message Bus</h1>
-					<small class="fragment">Ou microserviços, a parte assíncrona</small>
-				</section>
-				<section data-transition="fade">
-					<h1 style="color: red">Atenção:</h1>
-					<h3>Esta apresentação contém gatos</h3>
-					<p>Sorry dog people</p>
-				</section>
-				<section>
-					<section>
-						<h2>Antes de qualquer coisa...</h2>
-						<h3 class="fragment">Quem é esse doido aí?</h3>
-					</section>
-					<section>
-						<h1>Marcello Rocha</h1>
-						<p>Alguns me conhecem por <a href="http://twitter.com/mereghost">@mereghost</a></p>
-					</section>
-					<section>
-						<h1>Geek assumido</h1>
-						<ul>
-							<li class="fragment">Leitor voraz</li>
-							<li class="fragment">Apaixonado por RPGs, jogos de tabuleiro, enfim fã de jogos</li>
-							<li class="fragment">Praticante de Refactor Terapêutico</li>
-							<li class="fragment">Devorador de novas tecnologias</li>
-						</ul>
-					</section>
-					<section>
-						<h1>Tabalhando com Ruby desde 2005</h1>
-						<h6>Não sinto saudade de você C#</h6>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h2>Essa história aconteceu onde?</h2>
-						<p class="fragment">Afinal, toda boa história começa em algum canto da galáxia</p>
-					</section>
-					<section>
-						<img src="imgs/logo-vagas.png" alt="VAGAS" style="border: 0; box-shadow: 0 0 0 0 #fff">
-						<aside class="notes">Alguém aí conhecea VAGAS (sem ser o que o Ronie e o Dadario apresentaram nesses dias?</aside>
-					</section>
-					<section>
-						<h2>A VAGAS é uma empresa de Tecnologia</h2>
-						<p>Sério, não tô de brincadeira</p>
-					</section>
-					<section>
-						<h3>Temos o site de carreira</h3>
-						<p><a href="https://www.vagas.com.br"><img src="imgs/vagas-candidatos.png" alt="VAGAS"></a></p>
-					</section>
-					<section>
-						<h2>Mas o nosso negócio é um software de recrutamento e seleção</h2>
-						<p class="fragment">
-							<a href="https://www.vagas.com.br/empresas">
-								<img src="imgs/logo-epartner.png" alt="VAGAS Epartner" style="border: 0; box-shadow: 0 0 0 0 #fff">
-							</a>
-						</p>
-					</section>
-					<section>
-						<h2>Lá não temos chefes</h2>
-						<p>Ou nas palavras do nosso fundador
-						<blockquote>
-							<p>
-								Temos um modelo de gestão radicalmente horizontal.
-							</p>
-							<footer> - <cite>Mario Kaphan</cite></footer>
-						</blockquote></p>
-						<aside class="notes">Momento Jabá da VAGAS. 3 mins no máximo</aside>
-					</section>
-					<section>
-						<h3>Alguns de nossos números</h3>
-						<ol>
-							<li class="fragment">Mais de 9 Milhões de currículos únicos</li>
-							<li class="fragment">3k+ clientes
-								<ul>
-									<li class="fragment">73 das 100 maiores empresas do país</li>
-									<li class="fragment">48 das classificadas no GPTW</li>
-								</ul>
-							</li>
-							<li class="fragment">
-								Trafego Insano!
-								<ul>
-									<li>96 milhões de pageviews no mês</li>
-									<li>350 mil visitantes únicos por dia</li>
-								</ul>
-							</li>
-							<li class="fragment">~2 TB de dados e mais de 80k tabelas</li>
-							<li class="fragment">4 finais de tarde de jogos de tabuleiro no mês ^_^</li>
-						</ol>
-					</section>
-					<section>
-						<h2>E o que eu faço lá?</h2>
-						<p>Bom, além de participar da gestão da empresa, eu resolvo problemas de escalabilidade e arquitetura</p>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h2>E é aqui que começa a história</h2>
-					</section>
-					<section>
-						<h2>O software VAGAS tem mais de 15 anos</h2>
-						<ul>
-							<li class="fragment">Crescendo de maneira orgânica</li>
-							<li class="fragment">Em ASP Clássico</li>
-							<li class="fragment">E cheio de customizações para os clientes</li>
-						</ul>
-						<aside class="notes">Momento da piada de perder os cabelos</aside>
-					</section>
-					<section>
-						<img src="imgs/sci_cat.jpg" alt="Ideia" style="float: left">
-						<h1>Idéia!</h1>
-						<h5>
-							Vamos reprojetar a coisa toda usando Ruby
-						</h5>
-						<small class="fragment">Afinal, o que pode dar errado?</small>
-					</section>
-					<section>
-						<h2>Primeira tentativa</h2>
-						<p>Projeto único em RoR, que rapidamente ficou impossível de trabalhar</p>
-						<small class="fragment">80k tabelas. #ficadica de algumas dificuldades</small>
-					</section>
-					<section>
-						<h2>Microserviços ao resgate</h2>
-						<p><img src="imgs/rescue_cat.jpg" alt="Hover Cat"></p>
-						<aside class="notes">Comentar que ninguém conta os macetes nos detalhes</aside>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h3>Arquitetura distribuida</h3>
-						<p>Concluimos que seria mais simples substituir a lógica do ASP aos poucos.</p>
-					</section>
-					<section>
-						<h2>A(s) pergunta(s) era(m): Como?</h2>
-						<p class="fragment">E afinal o quão pequeno deve ser um serviço?</p>
-						<p class="fragment">E mais umas 200 perguntas que todos se fazem nessa hora</p>
-						<aside class="notes">Comentar do códdigo tem que ser "desse tamanho" do Chad Fowler</aside>
-					</section>
-					<section>
-						<h3>E principalmente: Como raios mantemos os sistemas funcionando lado a lado?</h3>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h2>VAGAS under the hood</h2>
-						<img src="imgs/pafuncia.jpg" alt="pafuncia" height="450px">
-					</section>
-					<section>
-						<p>
-							<img src="imgs/homer.png" alt="YOLO" style="border: 0; box-shadow: 0 0 0 0">
-						</p>
-						<h2 class="fragment">Ações causam efeitos colaterais por todo lado</h2>
-						<p class="fragment">Como vamos retratar isso?</p>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h1>RabbitMQ</h1>
-						<p><a href="http://rabbitmq.com"><img src="imgs/rabbitmq.jpg" alt="RabbitMQ"></a></p>
-					</section>
-					<section>
-						<h2>Porque o RabbitMQ</h2>
-						<ol>
-							<li class="fragment">OSS de fácil instalação / manutenção</li>
-							<li class="fragment">Suporte a persistência em disco, confirms e ACKs</li>
-							<li class="fragment">Clustering e Federação entre Brokers</li>
-							<li class="fragment">Mesmo com máquinas modestas aguenta um fluxo de mensagems BEM grande</li>
-							<li class="fragment">Drivers maduros pra tudo quando é linguagem</li>
-						</ol>
-					</section>
-					<section>
-						<h3>O RabbitMQ tem lá seus problemas</h3>
-						<ol>
-							<li class="fragment">Possivel perda de mensagens numa partição de rede</li>
-							<li class="fragment">Impossível criar uma transação como definida no AMQP</li>
-							<li class="fragment">O cluster é extremamente sensível a picos de latência</li>
-						</ol>
-					</section>
-				</section>
-				<section>
-					Padronização do acesso. => Basquiat
-				</section>
-				<section>
-					<section>
-						<h3>RabbitMQ tem driver pra tudo que é linguagem</h3>
-						<h6>Bom, isso é mentira.</h6>
-					</section>
-					<section>
-						<h3>Não há drivers para ASP Clássico</h3>
-						<div class="fragment">
-							<img src="imgs/confused-cat.jpg" alt="Hein?">
-							<p>Danou-se!</p>
-						</div>
-					</section>
-					<section>
-						<h2>REST publisher</h2>
-						<aside class="notes">Explicar em linhas gerais o motivo de existência do Lautrec</aside>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h3>Assincronicidade == Compromissos</h3>
-					</section>
-					<section>
-						<h3>Idempotencia</h3>
-						<p>(praticamente) Todos nossos serviços tem der ser idempotentes.</p>
-						<aside class="notes">Entrega do RabbitMQ ser "At-least-once"</aside>
-					</section>
-					<section>
-						<h3>Fallbacks</h3>
-						<p>
-							No caso de falhas dos workers ou ausência do broker temos que ter como recuperar o trabalho.
-							<ul>
-								<li>Batches de republicação em caso de falha do broker</li>
-								<li>Processos em batch para os workers (caso possível)</li>
-							</ul>
-						</p>
-					</section>
-					<section>
-						<h3>Cache. Cache por todos os lados</h3>
-						<p>
-							Como (na maioria dos) casos a persistência só vai acontecer no futuro, temos de dar a ilusão que a ação aconteceu de imediato.
-						</p>
-						<p class="fragment">
-							Ou no mínimo avisar quando a ação foi concluída
-						</p>
-					</section>
-				</section>
-				<section>
-					<h3>TL;DR</h3>
-					<p>A estrutura distruibuida e assincrona ainda apresenta alguns desafios, mas está sendo usada com grande sucesso na dura empreitada do <ins>"Big Rewrite"</ins></p>
-				</section>
-				<section>
-					<h1>Obrigado!</h1>
-					<p>
-						Se tiver dúvidas, perguntas, vontade de trabalhar conosco ou só quiser trocar uma idéia:
-						<a href="mailto:marcello.rocha@vagas.com.br">marcello.rocha@vagas.com.br</a>
-					</p>
-				</section>
-			</div>
-		</div>
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Our (Not Really) Entreprise Message Bus</h1>
+        </section>
+        <section data-transition="fade">
+          <h1 style="color: red">Atenção:</h1>
+          <h3>Esta apresentação contém gatos</h3>
+          <p>Sorry dog people</p>
+        </section>
+        <section>
+          <section>
+            <h2>Antes de qualquer coisa...</h2>
+            <h3 class="fragment">Quem é esse doido aí?</h3>
+          </section>
+          <section>
+            <h1>Marcello Rocha</h1>
+            <p>Alguns me conhecem por <a href="http://twitter.com/mereghost">@mereghost</a></p>
+          </section>
+          <section>
+            <h1>Geek assumido</h1>
+            <ul>
+              <li class="fragment">Leitor voraz</li>
+              <li class="fragment">Apaixonado por RPGs, jogos de tabuleiro, enfim fã de jogos</li>
+              <li class="fragment">Praticante de Refactor Terapêutico</li>
+              <li class="fragment">Devorador de novas tecnologias</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Tabalhando com Ruby desde 2005</h1>
+            <h6>Não sinto saudade de você C#</h6>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Essa história aconteceu onde?</h2>
+            <p class="fragment">Afinal, toda boa história começa em algum canto da galáxia</p>
+          </section>
+          <section>
+            <img src="imgs/logo-vagas.png" alt="VAGAS" style="border: 0; box-shadow: 0 0 0 0 #fff">
+            <aside class="notes">Alguém aí conhecea VAGAS (sem ser o que o Ronie e o Dadario apresentaram nesses dias?</aside>
+          </section>
+          <section>
+            <h2>A VAGAS é uma empresa de Tecnologia</h2>
+            <p>Sério, não tô de brincadeira</p>
+          </section>
+          <section>
+            <h3>Temos o site de carreira</h3>
+            <p><a href="https://www.vagas.com.br"><img src="imgs/vagas-candidatos.png" alt="VAGAS"></a></p>
+          </section>
+          <section>
+            <h2>Mas o nosso negócio é um software de recrutamento e seleção</h2>
+            <p class="fragment">
+              <a href="https://www.vagas.com.br/empresas">
+                <img src="imgs/logo-epartner.png" alt="VAGAS Epartner" style="border: 0; box-shadow: 0 0 0 0 #fff">
+              </a>
+            </p>
+          </section>
+          <section>
+            <h2>Lá não temos chefes</h2>
+            <p>Ou nas palavras do nosso fundador
+            <blockquote>
+              <p>
+                Temos um modelo de gestão radicalmente horizontal.
+              </p>
+              <footer> - <cite>Mario Kaphan</cite></footer>
+            </blockquote></p>
+            <aside class="notes">Momento Jabá da VAGAS. 3 mins no máximo</aside>
+          </section>
+          <section>
+            <h3>Alguns de nossos números</h3>
+            <ol>
+              <li class="fragment">Mais de 9 Milhões de currículos únicos</li>
+              <li class="fragment">3k+ clientes
+                <ul>
+                  <li class="fragment">73 das 100 maiores empresas do país</li>
+                  <li class="fragment">48 das classificadas no GPTW</li>
+                </ul>
+              </li>
+              <li class="fragment">
+                Trafego Insano!
+                <ul>
+                  <li>96 milhões de pageviews no mês</li>
+                  <li>350 mil visitantes únicos por dia</li>
+                </ul>
+              </li>
+              <li class="fragment">~2 TB de dados e mais de 80k tabelas</li>
+              <li class="fragment">4 finais de tarde de jogos de tabuleiro no mês ^_^</li>
+            </ol>
+          </section>
+          <section>
+            <h2>E o que eu faço lá?</h2>
+            <p>Bom, além de participar da gestão da empresa, eu ajudo com a definição de arquitetura e a resolver problemas de escalonamento</p>
+            <small class="fragment">E aterrorizar os sysadmins com uma nova técnica/tecnologia</small>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>E é aqui que começa a história</h2>
+          </section>
+          <section>
+            <h2>O software VAGAS tem mais de 15 anos</h2>
+            <ul>
+              <li class="fragment">Crescendo de maneira orgânica</li>
+              <li class="fragment">Em ASP Clássico</li>
+              <li class="fragment">E cheio de customizações para os clientes</li>
+            </ul>
+            <aside class="notes">Momento da piada de perder os cabelos</aside>
+          </section>
+          <section>
+            <img src="imgs/sci_cat.jpg" alt="Ideia" style="float: left">
+            <h1>Idéia!</h1>
+            <h5>
+              Vamos reprojetar a coisa toda usando Ruby
+            </h5>
+            <small class="fragment">Afinal, o que pode dar errado?</small>
+          </section>
+          <section>
+            <h2>Primeira tentativa</h2>
+            <p>Projeto único em RoR, que rapidamente ficou impossível de trabalhar</p>
+            <small class="fragment">80k tabelas. #ficadica de algumas dificuldades</small>
+          </section>
+          <section>
+            <h2>Microserviços ao resgate</h2>
+            <p><img src="imgs/rescue_cat.jpg" alt="Hover Cat"></p>
+            <aside class="notes">Comentar que ninguém conta os macetes nos detalhes</aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Arquitetura distribuida</h3>
+            <p>Concluimos que seria mais simples substituir a lógica do ASP aos poucos.</p>
+          </section>
+          <section>
+            <h2>A(s) pergunta(s) era(m): Como?</h2>
+            <p class="fragment">E afinal o quão pequeno deve ser um serviço?</p>
+            <p class="fragment">E mais umas 200 perguntas que todos se fazem nessa hora</p>
+            <aside class="notes">Comentar do códdigo tem que ser "desse tamanho" do Chad Fowler</aside>
+          </section>
+          <section>
+            <h3>E principalmente: Como raios mantemos os sistemas funcionando lado a lado?</h3>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>VAGAS under the hood</h2>
+            <img src="imgs/pafuncia.jpg" alt="pafuncia" height="450px">
+          </section>
+          <section>
+            <p>
+              <img src="imgs/homer.png" alt="YOLO" style="border: 0; box-shadow: 0 0 0 0">
+            </p>
+            <h2 class="fragment">Ações causam efeitos colaterais por todo lado</h2>
+            <p class="fragment">Como vamos retratar isso?</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>RabbitMQ</h1>
+            <p><a href="http://rabbitmq.com"><img src="imgs/rabbitmq.jpg" alt="RabbitMQ"></a></p>
+          </section>
+          <section>
+            <h2>Porque o RabbitMQ</h2>
+            <ol>
+              <li class="fragment">OSS de fácil instalação / manutenção</li>
+              <li class="fragment">Suporte a persistência em disco, confirms e ACKs</li>
+              <li class="fragment">Clustering e Federação entre Brokers</li>
+              <li class="fragment">Mesmo com máquinas modestas aguenta um fluxo de mensagems BEM grande</li>
+              <li class="fragment">Drivers maduros pra tudo quando é linguagem</li>
+            </ol>
+          </section>
+          <section>
+            <h3>O RabbitMQ tem lá seus problemas</h3>
+            <ol>
+              <li class="fragment">Possivel perda de mensagens numa partição de rede</li>
+              <li class="fragment">Impossível criar uma transação como definida no AMQP</li>
+              <li class="fragment">O cluster é extremamente sensível a picos de latência</li>
+              <li class="fragment">Nenhum controle de re-enfileiramento</li>
+            </ol>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>E mesmo tendo drivers pra diversas linguagens</h2>
+            <p>Precisamos padronizar as configurações</p>
+          </section>
+          <section>
+            <h4>RabbitMQ tem diferentes exchanges, queues, dead-letter-exchanges...AHHH!</h4>
+            <img src="imgs/panic.jpg" alt="Panic!">
+          </section>
+          <section>
+            <h2>Desenvolvimento de bibliotecas</h2>
+            <p>A idéia é ocultar a complexidade e deixar que todos usem as mesmas configurações</p>
+          </section>
+          <section>
+            <h2>Basquiat</h2>
+            <p>Biblioteca Ruby para lidar com message queues</p>
+            <aside class="notes">Projetos com nomes de artistas</aside>
+          </section>
+          <section>
+            <h2>Configuração simples</h2>
+            <pre><code class="yaml" data-trim>
+development:
+  default_adapter: 'Basquiat::Adapter::RabbitMq'
+  adapter_options:
+    hosts: ['my.server.local', 'my.other.server']
+    publisher:
+      persistent: true
+      confirm: true
+    queue:
+      durable: false
+    requeue:
+      enabled: true
+      strategy: :delayed_delivery
+        retries: 10
+            </code></pre>
+          </section>
+          <section>
+            <h2>Uso simples</h2>
+            <pre><code class="ruby" data-trim>
+Basquiat.configure do |config|
+  config.config_file = 'config/basquiat.yml'
+end
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+class EventClass
+  extend Basquiat::Base
 
-		<script>
+  subscribe_to 'awesome.event', ->(msg) { make_magic_happen_with(msg) }
+end
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+EventClass.listen
+# ou pra publicar
+EventClass.publish 'awesome.event', {my: 'hash'}
+            </code></pre>
+          </section>
+          <section>
+            <h3>Implementamos 3 maneiras de lidar com re-enfileiramento</h3>
+            <p>
+              Porque nem toda mensagem nasce (ou morre) igual.
+              <ol>
+                <li class="fragment">Basic Acknowledges</li>
+                <li class="fragment">Dead Lettering</li>
+                <li class="fragment">Delayed Delivery</li>
+              </ol>
+            </p>
+            <aside class="notes">Explicar rápido a diferença entre delayed_delivery, unack e dead_letter_exchange</aside>
+          </section>
+          <section>
+            <h2>Todos os workers num único projeto</h2>
+            <p class="fragment">Isso ainda estamos avaliando, gerou alguns problemas de início mas o futuro parece promissor</p>
+            <aside class="notes">A idéia é delegar trabalho para os serviços e não fazer nada localmente</aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h4>No começo eu disse:</h4>
+            <h2 class="fragment">RabbitMQ tem driver pra tudo que é linguagem</h3>
+            <h6 class="fragment">Bom, eu menti.</h6>
+          </section>
+          <section>
+              <h2>Não há drivers para ASP Clássico</h2>
+            <div class="fragment">
+              <img src="imgs/confused-cat.jpg" alt="Hein?">
+              <p>Danou-se!</p>
+            </div>
+          </section>
+          <section>
+            <h2>REST publisher</h2>
+            <div class="fragment">
+              <img src="imgs/chapeu.png" alt="Chapeu" height="300px">
+              <p>Mais uma camada antes do Broker</p>
+              <pre><code class="bash">
+curl -XPOST load_balancer/evento.batuta -d '{"one": "json"}'
+              </code></pre>
+            </div>
+            <aside class="notes">Explicar em linhas gerais o motivo de existência do Lautrec. Mais uma camada de indireção</aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Assincronicidade == Compromissos</h2>
+          </section>
+          <section>
+            <h3>Idempotencia</h3>
+            <p>(praticamente) Todos nossos serviços tem der ser idempotentes.</p>
+            <aside class="notes">Entrega do RabbitMQ ser "At-least-once"</aside>
+          </section>
+          <section>
+            <h3>Fallbacks</h3>
+            <p>
+              No caso de falhas dos workers ou ausência do broker temos que ter como recuperar o trabalho.
+              <ul>
+                <li>Batches de republicação em caso de falha do broker</li>
+                <li>Processos em batch para os workers (caso possível)</li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <h3>Cache. Cache por todos os lados</h3>
+            <p>
+              Como (na maioria dos) casos a persistência só vai acontecer no futuro, temos de dar a ilusão que a ação aconteceu de imediato.
+            </p>
+            <p class="fragment">
+              Ou no mínimo avisar quando a ação foi concluída
+            </p>
+          </section>
+        </section>
+        <section>
+          <h3>TL;DR</h3>
+          <p>A estrutura distruibuida e assincrona ainda apresenta alguns desafios, mas está sendo usada com sucesso na dura empreitada do <ins>"Big Rewrite"</ins></p>
+        </section>
+        <section>
+          <h1>Obrigado!</h1>
+          <p>
+            Se tiver dúvidas, perguntas, vontade de trabalhar conosco ou só quiser trocar uma idéia:
+            <a href="mailto:marcello.rocha@vagas.com.br">marcello.rocha@vagas.com.br</a>
+          </p>
+        </section>
+      </div>
+    </div>
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+    <script>
 
-		</script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-	</body>
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
 </html>
