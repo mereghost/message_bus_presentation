@@ -110,7 +110,7 @@
           <section>
             <h3>Alguns de nossos números</h3>
             <ol>
-              <li class="fragment">Mais de 9 Milhões de currículos únicos</li>
+              <li class="fragment">Cerca 10 Milhões de currículos únicos</li>
               <li class="fragment">3k+ clientes
                 <ul>
                   <li class="fragment">73 das 100 maiores empresas do país</li>
@@ -120,7 +120,7 @@
               <li class="fragment">
                 Trafego Insano!
                 <ul>
-                  <li>96 milhões de pageviews no mês</li>
+                  <li>100 milhões de pageviews no mês</li>
                   <li>350 mil visitantes únicos por dia</li>
                 </ul>
               </li>
@@ -318,11 +318,12 @@ curl -XPOST load_balancer/evento.batuta -d '{"one": "json"}'
         </section>
         <section>
           <section>
-            <h2>Assincronicidade == Compromissos</h2>
+            <h2>Assincrono == Compromissos</h2>
           </section>
           <section>
-            <h3>Idempotencia</h3>
+            <h3>Serviços Idempotentes</h3>
             <p>(praticamente) Todos nossos serviços tem der ser idempotentes.</p>
+            <p>Não temos certeza que as mensagens chegam em ordem</p>
             <aside class="notes">Entrega do RabbitMQ ser "At-least-once"</aside>
           </section>
           <section>
