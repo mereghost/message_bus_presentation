@@ -136,7 +136,7 @@
         </section>
         <section>
           <section>
-            <h2>E é aqui que começa a história</h2>
+            <h2>E é nesse cenário que começa minha saga</h2>
           </section>
           <section>
             <h2>O software VAGAS tem mais de 15 anos</h2>
@@ -157,19 +157,21 @@
           </section>
           <section>
             <h2>Primeira tentativa</h2>
-            <p>Projeto único em RoR, que rapidamente ficou impossível de trabalhar</p>
-            <small class="fragment">80k tabelas. #ficadica de algumas dificuldades</small>
+            <p>Projeto único em RoR</p>
+            <small class="fragment">Lembram das 80k tabelas?</small>
           </section>
           <section>
-            <h2>Microserviços ao resgate</h2>
-            <p><img src="imgs/rescue_cat.jpg" alt="Hover Cat"></p>
-            <aside class="notes">Comentar que ninguém conta os macetes nos detalhes</aside>
+            <h2>Precisamos dos objetos do domínio em outros projetos</h2>
+            <p>Extraímos uma lib com eles</p>
+            <small class="fragment">E abrimos as portas do inferno</small>
           </section>
         </section>
         <section>
           <section>
-            <h1>Microsserviços</h1>
+            <h2>Microsserviços as resgate</h2>
+            <p><img src="imgs/rescue_cat.jpg" alt="Hover Cat"></p>
             <h3 class="fragment">A nova bala de prata</h3>
+            <aside class="notes">Comentar que ninguém conta os macetes nos detalhes</aside>
           </section>
           <section>
             <h3>Arquitetura distribuida</h3>
@@ -196,6 +198,14 @@
             </p>
             <h2 class="fragment">Ações causam efeitos colaterais por todo lado</h2>
             <p class="fragment">Como vamos lidar com isso?</p>
+          </section>
+          <section>
+            <h2>Eventos</h2>
+            <img src="imgs/eventos.jpg" alt="Eventos">
+            <p>
+              Vamos focar no que acontece no sistema e nos efeitos colaterais causados
+            </p>
+            <aside class="notes">E aqui explicar mais ou menos o porque do foco</aside>
           </section>
         </section>
         <section>
@@ -288,16 +298,31 @@ EventClass.publish 'awesome.event', {my: 'hash'}
             </code></pre>
           </section>
           <section>
-            <h3>Implementamos 3 maneiras de lidar com re-enfileiramento</h3>
+            <h2>PubSub</h2>
+            <img src="imgs/pubsub.png" alt="PubSub" height="300">
+            <p class="fragment">Fala a verdade, você pensou nesse modelo</p>
+            <aside class="notes">Legal mas não atende</aside>
+          </section>
+          <section>
+            <h2>Precisamos de algo mais robusto</h2>
+            <img src="imgs/python-five.png" alt="Topic" height="300">
+            <aside class="notes">Explicar a diferença.</aside>
+          </section>
+          <section>
+            <h3>Acknowledges &amp; Requeue</h3>
             <p>
-              Porque nem toda mensagem nasce (ou morre) igual.
-              <ol>
-                <li class="fragment">Basic Acknowledges</li>
-                <li class="fragment">Dead Lettering</li>
-                <li class="fragment">Delayed Delivery</li>
-              </ol>
+              Há várias estratégias, entre elas a de não fazer
             </p>
-            <aside class="notes">Explicar rápido a diferença entre delayed_delivery, unack e dead_letter_exchange</aside>
+          </section>
+          <section>
+            <h2>Usamos 4 modos diferentes</h2>
+              <ol>
+                <li>Auto Acknowledge</li>
+                <li>Acknowledge e Not Acknowledge</li>
+                <li>Requeue com intervalo de tempo fixo - Dead Lettering</li>
+                <li>Requeue com intervalo exponencial - Delayed Delivery</li>
+              </ol>
+              <aside class="notes">Explicar uso de todos</aside>
           </section>
           <section>
             <h2>Todos os workers num único projeto</h2>
