@@ -62,23 +62,24 @@
             <ul>
               <li class="fragment">Leitor voraz</li>
               <li class="fragment">Apaixonado por RPGs, jogos de tabuleiro, enfim fã de jogos</li>
-              <li class="fragment">Praticante de Refactor Terapêutico</li>
+              <li class="fragment">Praticante de <a href="http://www.kytrinyx.com/talks/therapeutic-refactoring">Refactor Terapêutico</a></li>
               <li class="fragment">Devorador de novas tecnologias</li>
             </ul>
+            <aside class="notes">TR => Katrina Olwen - 2012</aside>
           </section>
           <section>
-            <h1>Trabalhando com Ruby desde 2005</h1>
-            <h6>Não sinto saudade de você C#</h6>
+            <h2>Trabalhando com Ruby desde 2006</h2>
+            <p>E a menor parte desse tempo com Rails</p>
           </section>
         </section>
         <section>
           <section>
-            <h2>Essa história aconteceu onde?</h2>
-            <p class="fragment">Afinal, toda boa história começa em algum canto da galáxia</p>
+            <h2>Onde rolou essa história?</h2>
+            <p>Também conhecido como "onde raios eu trabalho"</p>
           </section>
           <section>
             <img src="imgs/logo-vagas.png" alt="VAGAS" style="border: 0; box-shadow: 0 0 0 0 #fff">
-            <aside class="notes">Alguém aí conhecea VAGAS (sem ser o que o Ronie e o Dadario apresentaram nesses dias?</aside>
+            <aside class="notes">Alguém aí conhece a VAGAS (sem ser o que o Ronie, Baca e o Dadario apresentaram nesses dias?</aside>
           </section>
           <section>
             <h2>A VAGAS é uma empresa de Tecnologia</h2>
@@ -131,13 +132,13 @@
           </section>
           <section>
             <h2>E o que eu faço lá?</h2>
-            <p>Bom, além de participar da gestão da empresa, eu ajudo com a definição de arquitetura e a resolver problemas de escalonamento</p>
+            <p>Bom, além de participar da gestão da empresa, eu contribuo nas definições de arquitetura e a resolver problemas de escalonamento</p>
             <small class="fragment">E aterrorizo os sysadmins com novas técnicas/tecnologias</small>
           </section>
         </section>
         <section>
           <section>
-            <h2>E é nesse cenário que começa minha saga</h2>
+            <h2>E é nesse cenário que começa a saga</h2>
           </section>
           <section>
             <h2>O software VAGAS tem mais de 15 anos</h2>
@@ -168,6 +169,9 @@
           </section>
         </section>
         <section>
+          <h2>Depois de muito discutir</h2>
+        </section>
+        <section>
           <section>
             <h2>Microsserviços as resgate</h2>
             <p><img src="imgs/rescue_cat.jpg" alt="Hover Cat"></p>
@@ -176,16 +180,13 @@
           </section>
           <section>
             <h3>Arquitetura distribuida</h3>
-            <p>Concluimos que seria mais simples substituir a lógica do ASP aos poucos.</p>
+            <p>Parece mais simples substituir a lógica do ASP aos poucos e trocar as chamadas de função por chamadas de APIs</p>
           </section>
           <section>
             <h2>A(s) pergunta(s) era(m): Como?</h2>
-            <p class="fragment">E afinal o quão pequeno deve ser um serviço?</p>
-            <p class="fragment">200.times { perguntas que todos se fazem nessa hora }</p>
+            <p class="fragment">E quão pequeno deve ser um serviço?</p>
+            <p class="fragment">200.times { duvidas que todos se tem nessa hora }</p>
             <aside class="notes">Comentar do códdigo tem que ser "desse tamanho" do Chad Fowler</aside>
-          </section>
-          <section>
-            <h3>E principalmente: Como raios mantemos os sistemas funcionando lado a lado?</h3>
           </section>
         </section>
         <section>
@@ -199,12 +200,13 @@
             </p>
             <h2 class="fragment">Ações causam efeitos colaterais por todo lado</h2>
             <p class="fragment">Como vamos lidar com isso?</p>
+            <aside class="notes">Dar o exemplo de uma candidatura e como isso afeta a Recomendação, Vaga e o proprio candidato</aside>
           </section>
           <section>
             <h2>Eventos</h2>
             <img src="imgs/eventos.jpg" alt="Eventos">
             <p>
-              Vamos focar no que acontece no sistema e nos efeitos colaterais causados
+              Vamos focar nas ações que ocorrem no sistema e nos efeitos colaterais gerados
             </p>
             <aside class="notes">E aqui explicar mais ou menos o porque do foco</aside>
           </section>
@@ -229,7 +231,7 @@
                 <li>Pacotes para tudo que é distro.</li>
                 <li>Durable Queues / Exchanges. Confirm. Ack</li>
                 <li>Cluster, Federação e Shoveling</li>
-                <li>1 Bilhão de mensagens/dia</li>
+                <li>1 Bilhão de mensagens/dia | 1mi/s em uso interno no Google</li>
                 <li>Java, Ruby, Python, erlang etc</li>
               </ol>
             </aside>
@@ -310,7 +312,7 @@ EventClass.publish 'awesome.event', {my: 'hash'}
             <aside class="notes">Explicar a diferença.</aside>
           </section>
           <section>
-            <h3>Acknowledges &amp; Requeue</h3>
+            <h2>Acknowledges &amp; Requeue</h2>
             <p>
               Há várias estratégias, entre elas a de não fazer
             </p>
@@ -340,8 +342,8 @@ EventClass.publish 'awesome.event', {my: 'hash'}
           <section>
               <h2>Não há drivers para ASP Clássico</h2>
             <div class="fragment">
-              <img src="imgs/confused-cat.jpg" alt="Hein?">
               <p>Danou-se!</p>
+              <img src="imgs/confused-cat.jpg" alt="Hein?">
             </div>
           </section>
           <section>
@@ -387,8 +389,9 @@ curl -XPOST load_balancer/evento.batuta -d '{"one": "json"}'
           </section>
         </section>
         <section>
-          <h3>TL;DR</h3>
-          <p>A estrutura distruibuida e assincrona ainda apresenta alguns desafios, mas está sendo usada com sucesso na dura empreitada do <ins>"Big Rewrite"</ins></p>
+          <h1>WARNING!!!!</h1>
+          <h3>O broker passa a ser seu Single Point of Failure.</h3>
+          <aside class="notes">Ele é o cérebro do sistema</aside>
         </section>
         <section>
           <h1>Obrigado!</h1>
