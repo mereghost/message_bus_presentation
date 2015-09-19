@@ -45,8 +45,7 @@
         </section>
         <section data-transition="fade">
           <h1 style="color: red">Atenção:</h1>
-          <h3>Esta apresentação contém gatos</h3>
-          <h4>E algumas <i>little white lies</i></h4>
+          <h3>Esta apresentação contém algumas <i>little white lies</i></h3>
         </section>
         <section>
           <section>
@@ -138,7 +137,7 @@
         </section>
         <section>
           <section>
-            <h2>E é nesse cenário que começa a saga</h2>
+            <h2>E é nesse cenário que começa a encr... saga</h2>
           </section>
           <section>
             <h2>O software VAGAS tem mais de 15 anos</h2>
@@ -151,7 +150,7 @@
           </section>
           <section>
             <img src="imgs/sci_cat.jpg" alt="Ideia" style="float: left">
-            <h1>Idéia!</h1>
+            <h1>Ideia!</h1>
             <h5>
               Vamos reprojetar a coisa toda usando Ruby
             </h5>
@@ -163,7 +162,7 @@
             <small class="fragment">Lembram das 80k tabelas?</small>
           </section>
           <section>
-            <h2>Precisamos dos objetos do domínio em outros projetos</h2>
+            <h2>Precisamos dos "modelos" em outros projetos</h2>
             <p>Extraímos uma lib com eles</p>
             <small class="fragment">E abrimos as portas do inferno</small>
           </section>
@@ -173,19 +172,19 @@
         </section>
         <section>
           <section>
-            <h2>Microsserviços as resgate</h2>
+            <h2>Microsserviços ao resgate</h2>
             <p><img src="imgs/rescue_cat.jpg" alt="Hover Cat"></p>
             <h3 class="fragment">A nova bala de prata</h3>
             <aside class="notes">Comentar que ninguém conta os macetes nos detalhes</aside>
           </section>
           <section>
-            <h3>Arquitetura distribuida</h3>
+            <h3>Serviços independentes</h3>
             <p>Parece mais simples substituir a lógica do ASP aos poucos e trocar as chamadas de função por chamadas de APIs</p>
           </section>
           <section>
             <h2>A(s) pergunta(s) era(m): Como?</h2>
             <p class="fragment">E quão pequeno deve ser um serviço?</p>
-            <p class="fragment">200.times { duvidas que todos se tem nessa hora }</p>
+            <p class="fragment">200.times { Microservices.doubts_everyone_has }</p>
             <aside class="notes">Comentar do códdigo tem que ser "desse tamanho" do Chad Fowler</aside>
           </section>
         </section>
@@ -206,7 +205,7 @@
             <h2>Eventos</h2>
             <img src="imgs/eventos.jpg" alt="Eventos">
             <p>
-              Vamos focar nas ações que ocorrem no sistema e nos efeitos colaterais gerados
+              Focamos nas ações que ocorrem no sistema e nos efeitos colaterais gerados
             </p>
             <aside class="notes">E aqui explicar mais ou menos o porque do foco</aside>
           </section>
@@ -257,11 +256,12 @@
           </section>
           <section>
             <h2>Desenvolvimento de bibliotecas</h2>
-            <p>A idéia é ocultar a complexidade e deixar que todos usem as mesmas configurações</p>
+            <p>A ideia é ocultar a complexidade e deixar que todos usem as mesmas configurações</p>
           </section>
           <section>
             <h2>Basquiat</h2>
             <p>Biblioteca Ruby para lidar com message queues</p>
+            <small><a href="http://github.com/VAGAScom/basquiat">https://github.com/VAGAScom/basquiat</a></small>
             <aside class="notes">Projetos com nomes de artistas</aside>
           </section>
           <section>
@@ -303,7 +303,6 @@ EventClass.publish 'awesome.event', {my: 'hash'}
           <section>
             <h2>PubSub</h2>
             <img src="imgs/pubsub.png" alt="PubSub" height="300">
-            <p class="fragment">Fala a verdade, você pensou nesse modelo</p>
             <aside class="notes">Legal mas não atende</aside>
           </section>
           <section>
@@ -320,12 +319,12 @@ EventClass.publish 'awesome.event', {my: 'hash'}
           <section>
             <h2>Usamos 4 modos diferentes</h2>
               <ol>
-                <li>Auto Acknowledge</li>
-                <li>Acknowledge e Not Acknowledge</li>
-                <li>Requeue com intervalo de tempo fixo - Dead Lettering</li>
-                <li>Requeue com intervalo exponencial - Delayed Delivery</li>
+                <li class="fragment">Auto Acknowledge</li>
+                <li class="fragment">Acknowledge e Not Acknowledge</li>
+                <li class="fragment">Requeue com intervalo de tempo fixo - Dead Lettering</li>
+                <li class="fragment">Requeue com intervalo exponencial - Delayed Delivery</li>
               </ol>
-              <aside class="notes">Explicar uso de todos</aside>
+              <aside class="notes">Explicar brevemente uso de todos</aside>
           </section>
           <section>
             <h2>Todos os workers num único projeto</h2>
@@ -379,18 +378,17 @@ curl -XPOST load_balancer/evento.batuta -d '{"one": "json"}'
             </p>
           </section>
           <section>
-            <h3>Cache. Cache por todos os lados</h3>
-            <p>
-              Como (na maioria dos) casos a persistência só vai acontecer no futuro, temos de dar a ilusão que a ação aconteceu de imediato.
-            </p>
+            <h3>I see cached content.</h3>
+            <h4>All the time</h4>
             <p class="fragment">
-              Ou no mínimo avisar quando a ação foi concluída
+              Como (na maioria dos) casos a persistência só vai acontecer no futuro, temos de dar a ilusão que a ação aconteceu de imediato.
+              <ins>Ou no mínimo avisar quando a ação foi concluída</ins>
             </p>
           </section>
         </section>
         <section>
-          <h1>WARNING!!!!</h1>
-          <h3>O broker passa a ser seu Single Point of Failure.</h3>
+          <h1 style="color: red">WARNING!!!!</h1>
+          <h3>O broker (ou cluster) passa a ser seu Single Point of Failure.</h3>
           <aside class="notes">Ele é o cérebro do sistema</aside>
         </section>
         <section>
